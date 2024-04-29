@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class SettingsButton : MonoBehaviour
 {
-    [SerializeField] Button settingsButton;
-    private void Start()
+    Button settingsButton;
+    private void OnEnable()
     {
+        settingsButton = GetComponent<Button>();
         settingsButton.onClick.AddListener(SettingsButtonClick);
     }
 
@@ -18,7 +19,8 @@ public class SettingsButton : MonoBehaviour
         SceneManager.LoadSceneAsync("Settings Overlay", LoadSceneMode.Additive);
     }
 
-
-
-
+    private void OnDisable()
+    {
+        settingsButton.onClick.RemoveAllListeners();
+    }
 }

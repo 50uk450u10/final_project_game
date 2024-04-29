@@ -7,6 +7,7 @@ public class QuitButton : MonoBehaviour
    public void Quit()
    {
         Application.Quit();
-        //UnityEditor.EditorApplication.isPlaying = false;
+        //Remove before launch
+        UnityEditor.EditorApplication.isPlaying = false;
    }
 }

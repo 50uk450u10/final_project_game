@@ -22,6 +22,15 @@ public class SettingsMenu : MonoBehaviour
 
     void CloseMenu(InputAction.CallbackContext ctx)
     {
-        SceneManager.UnloadSceneAsync("Settings Overlay");
+        if (SceneManager.GetSceneByName("Settings Overlay").isLoaded)
+        {
+            SceneManager.UnloadSceneAsync("Settings Overlay");
+            return;
+        }
+        else if (SceneManager.GetSceneByName("PauseMenu").isLoaded)
+        {
+            SceneManager.UnloadSceneAsync("PauseMenu");
+            return;
+        }
     }
 }
