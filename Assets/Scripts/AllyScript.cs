@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AllyScript : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class AllyScript : MonoBehaviour
     [SerializeField] Transform followArea;
     [SerializeField] PlayerController player;
     [SerializeField] Collider2D collider;
+    [SerializeField] UnityEvent onDeath;
     Rigidbody2D rb;
     Vector2 direction;
     const float maxHealth = 5;
@@ -36,13 +38,15 @@ public class AllyScript : MonoBehaviour
 
         if (health == 0)
         {
-            death();
+            StartCoroutine(death());
         }
     }
 
-    void death()
+    IEnumerator death()
     {
         Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(3);
+        onDeath?.Invoke();
         Destroy(gameObject);
     }
 }
