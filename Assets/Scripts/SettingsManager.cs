@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class SettingsMenu : MonoBehaviour
+public class SettingsManager : MonoBehaviour
 {
     
     private void OnEnable()
@@ -22,7 +21,12 @@ public class SettingsMenu : MonoBehaviour
 
     void CloseMenu(InputAction.CallbackContext ctx)
     {
-        if (SceneManager.GetSceneByName("Settings Overlay").isLoaded)
+        if (!SceneManager.GetSceneByName("PauseMenu").isLoaded)
+        {
+            SceneManager.LoadSceneAsync("PauseMenu", LoadSceneMode.Additive);
+            return;
+        }
+        else if (SceneManager.GetSceneByName("Settings Overlay").isLoaded)
         {
             SceneManager.UnloadSceneAsync("Settings Overlay");
             return;
