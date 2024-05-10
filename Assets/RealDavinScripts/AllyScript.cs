@@ -13,14 +13,9 @@ public class AllyScript : MonoBehaviour
     Rigidbody2D rb;
     Vector2 direction;
     const float maxHealth = 5;
-<<<<<<< Updated upstream
-    float health;
-    bool isDefended = false;
-=======
     public float MaxHealth { get { return maxHealth; } }
     public float health { get; private set; }
     public bool isDefended = false;
->>>>>>> Stashed changes
 
     private void Start()
     {
