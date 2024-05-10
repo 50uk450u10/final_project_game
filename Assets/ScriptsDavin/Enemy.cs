@@ -68,7 +68,6 @@ public class Enemy : MonoBehaviour
     {
         enemyStateMachine.currentState.Do();
         enemyStateMachine.currentState.FixedDo();
-        Debug.Log(enemyStateMachine.currentState);
     }
     public enum EnemyType
     {
