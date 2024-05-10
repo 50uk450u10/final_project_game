@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D))]//make rigidbody a requirement to possess this script
 public class Projectile : MonoBehaviour
 {
     [SerializeField] int projectileSpeed;
@@ -10,11 +10,12 @@ public class Projectile : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        Destroy(gameObject);//destroy instance outside of gameview
     }
 
     public void spawnProjectileSettings(Vector2 dir)
     {
-        rb.AddForce(dir * projectileSpeed, ForceMode2D.Impulse);
+        rb.AddForce(dir * projectileSpeed, ForceMode2D.Impulse);//launch projectile
+
     }
 }
