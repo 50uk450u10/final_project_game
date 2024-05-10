@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6159414476116952039}
   - component: {fileID: 2089957581657658939}
   - component: {fileID: 8231083332389129653}
+  - component: {fileID: 1593243466336989603}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -100,9 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85a16798622e8149bc2b918f0454d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  baseMoveSpeed: 0
   attackSpeed: 2
-  attackHitbox: {fileID: 3066851146500688058}
 --- !u!50 &2089957581657658939
 Rigidbody2D:
   serializedVersion: 4
@@ -151,6 +151,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1593243466336989603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795830050899002642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca40945be16a8794aa321aeda353dd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1593243466336989603}
+        m_TargetAssemblyTypeName: Damagable1, Assembly-CSharp
+        m_MethodName: Hurt
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3066851146500688058
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,13 +189,14 @@ GameObject:
   - component: {fileID: 5279577828305527927}
   - component: {fileID: 3157874878996472352}
   - component: {fileID: 5205526155567887705}
+  - component: {fileID: 2293328193369329157}
   m_Layer: 0
   m_Name: AttackHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5279577828305527927
 Transform:
   m_ObjectHideFlags: 0
@@ -236,7 +264,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3066851146500688058}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -281,3 +309,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2293328193369329157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3066851146500688058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2114b41cfad54bd4a8b6daccd5bc3c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
