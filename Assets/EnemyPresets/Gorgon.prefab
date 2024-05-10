@@ -156,9 +156,9 @@ GameObject:
   - component: {fileID: 6700636829263677151}
   - component: {fileID: 5270666061272016925}
   - component: {fileID: 2989147402453053172}
-  - component: {fileID: 5454536884474344759}
   - component: {fileID: 8842893530384477630}
   - component: {fileID: 6977393914298587769}
+  - component: {fileID: 7901363659606223423}
   m_Layer: 8
   m_Name: Gorgon
   m_TagString: Gorgon
@@ -295,33 +295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileObject: {fileID: 7051041329738544900, guid: 71515f2466879a943844217042049edd, type: 3}
---- !u!114 &5454536884474344759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5634074506035843689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca40945be16a8794aa321aeda353dd33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDamage:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6977393914298587769}
-        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: OnDamaged
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!61 &8842893530384477630
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -384,3 +357,30 @@ MonoBehaviour:
   deathCheck:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7901363659606223423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5634074506035843689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87c3f39af5bea84ebd8506824b7a1b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6977393914298587769}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: OnDamaged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

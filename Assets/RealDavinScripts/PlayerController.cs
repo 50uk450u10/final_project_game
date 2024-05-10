@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Vector2 direction;
     const float maxHealth = 5;
-    float health;
+    public float MaxHealth { get { return maxHealth; } private set { MaxHealth = maxHealth; } }
+    public float health { get; private set; }
     float hMove;
     float vMove;
     float elapsedTime = 0;

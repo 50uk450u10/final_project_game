@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Damagable : MonoBehaviour
 {
-    [SerializeField] UnityEvent onDamage;
+    [SerializeField] public UnityEvent onDamage;
     public void Hurt()
     {
         onDamage?.Invoke();
