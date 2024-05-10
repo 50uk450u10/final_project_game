@@ -7,11 +7,11 @@ public class StartEnd : MonoBehaviour
 {
     private void Start()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1;//allow game to run
     }
 
     public void OnLose()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);//reload the game
     }
 }
