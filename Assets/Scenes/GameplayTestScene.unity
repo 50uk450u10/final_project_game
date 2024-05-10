@@ -293,7 +293,7 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2065266340}
+      - m_Target: {fileID: 2065266342}
         m_TargetAssemblyTypeName: StartEnd, Assembly-CSharp
         m_MethodName: OnLose
         m_Mode: 1
@@ -507,10 +507,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 557310332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6327094bb2c2e5041bbeb4d53943e9ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a71e3a7f5084b24db379ae5ff53b6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fire: {fileID: 3307709517784016289, guid: 67640a0e9d380494fa0fb9506365bbdd, type: 3}
+  fire: {fileID: 1748079661650902861, guid: 91f04eb0d53f3844d9206e0f0533ea38, type: 3}
   player: {fileID: 755817587}
   attackTime: 4
   meleeTime: 0
@@ -711,12 +711,12 @@ MonoBehaviour:
   speed: 5
   activeMeleeTime: 1
   activeRangedTime: 2
-  arrow: {fileID: 5951013612650564785, guid: 8475815edab8bac479ffa2a46b9dfe21, type: 3}
+  arrow: {fileID: 7426143519764007251, guid: 8475815edab8bac479ffa2a46b9dfe21, type: 3}
   collide: {fileID: 1286352849}
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2065266340}
+      - m_Target: {fileID: 2065266342}
         m_TargetAssemblyTypeName: StartEnd, Assembly-CSharp
         m_MethodName: OnLose
         m_Mode: 1
@@ -1067,7 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f638ef125d4f0c4283eb6c5da6dee33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  head: {fileID: 557310338}
+  head: {fileID: 0}
 --- !u!1 &1598592330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,7 +1433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2065266341}
-  - component: {fileID: 2065266340}
+  - component: {fileID: 2065266342}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1441,18 +1441,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2065266340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2065266339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de4fa519724b1c442852b6286e6ec324, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2065266341
 Transform:
   m_ObjectHideFlags: 0
@@ -1468,6 +1456,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2065266342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065266339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83007de47a64a724a80e0f416b554083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
