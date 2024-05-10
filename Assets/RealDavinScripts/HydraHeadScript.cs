@@ -31,29 +31,23 @@ public class HydraHeadScript : MonoBehaviour
                     elapsedTime += Time.deltaTime;//timer
                     if (elapsedTime >= attackTime)
                     {
+                        hydraAnimator.SetTrigger("firing");
                         elapsedTime = 0;//reset timer
                         GameObject p = Instantiate(fire);//create projectile
                         Vector3 playerDirectionV3 = (player.transform.position - transform.position).normalized;//grab 3D coordinates because Unity
                         Vector2 playerDirection = new Vector2(playerDirectionV3.x, playerDirectionV3.y);//set target coordinates to 2D
                         p.GetComponent<Projectile>().spawnProjectileSettings(playerDirection);//force added
                         p.transform.position = transform.position;//origin point of projectile
+                        hydraAnimator.SetTrigger("firing");
                     }
                     break;
                 case hydraAttackState.attacking:
+                    hydraAnimator.SetTrigger("attacking");
                     elapsedTime += Time.deltaTime;
                     if (elapsedTime >= meleeTime)
                     {
                         elapsedTime = 0;
-                        ghidorah = hydraAttackState.shooting;
-                    }
-                    break;
-                case hydraAttackState.hurt:
-                    hydraAnimator.SetBool("hurt", true);
-                    elapsedTime += Time.deltaTime;
-                    if (elapsedTime >= 1 / DifficultyManager.difficultyMultiplier)
-                    {
-                        elapsedTime = 0;
-                        hydraAnimator.SetBool("hurt", false);
+                        hydraAnimator.SetTrigger("attacking");
                         ghidorah = hydraAttackState.shooting;
                     }
                     break;
@@ -66,10 +60,5 @@ public class HydraHeadScript : MonoBehaviour
     {
         elapsedTime = 0;
         ghidorah = hydraAttackState.attacking;
-    }
-
-    public void switchToHurtState()
-    {
-        ghidorah = hydraAttackState.hurt;
     }
 }
