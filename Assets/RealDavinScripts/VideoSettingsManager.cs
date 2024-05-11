@@ -18,6 +18,6 @@ public class VideoSettingsManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("fullScreen", 0);
         }
-        Screen.SetResolution(1280, 720, FullScreenPref.fullScreenPref);
+        Screen.SetResolution(1920, 1080, FullScreenPref.CheckFullScreen());
     }
 }
