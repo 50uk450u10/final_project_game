@@ -306,10 +306,7 @@ MonoBehaviour:
   player: {fileID: 0}
   attackTime: 2
   meleeTime: 1
-  damageArea: {fileID: 7703101116709241755}
-  attack:
-    m_PersistentCalls:
-      m_Calls: []
+  damageArea: {fileID: 7328068363979838385}
   hydraAnimator: {fileID: 1516835290596437898}
   dangerArea: {fileID: 8432563914595928553}
   damagableArea: {fileID: 7703101116709241755}
@@ -761,6 +758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3465862516386702510}
   - component: {fileID: 8432563914595928553}
+  - component: {fileID: 3139964508462411385}
   m_Layer: 9
   m_Name: DangerCloseArea
   m_TagString: Untagged
@@ -828,3 +826,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6333239, y: 0.99821967}
   m_EdgeRadius: 0
+--- !u!114 &3139964508462411385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8097630490873993157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c2bc491f32bfd4bb8a43adae05fcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hydraHeadScript: {fileID: 2693038917575315030}

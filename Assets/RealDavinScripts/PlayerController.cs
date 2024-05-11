@@ -12,11 +12,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] BoxCollider2D collide;
     [SerializeField] UnityEvent onDeath;
     [SerializeField] AllyScript ally;
+    [SerializeField] AudioSource soundMaker;
+    [SerializeField] AudioClip arrowSound;
+    [SerializeField] AudioClip swordSound;
     Rigidbody2D rb;
     Animator animator;
     Vector2 direction;
     const float maxHealth = 5;
-    float health;
+    public float MaxHealth { get { return maxHealth; } private set { MaxHealth = maxHealth; } }
+    public float health { get; private set; }
     float hMove;
     float vMove;
     float rangedElapsedTime = 0;
@@ -74,6 +78,7 @@ public class PlayerController : MonoBehaviour
                     Projectile arrow = Instantiate(this.arrow);
                     arrow.spawnProjectileSettings(Vector2.right);
                     arrow.transform.position = transform.position;
+                    soundMaker.PlayOneShot(arrowSound);
                 }
             }
 
@@ -81,6 +86,7 @@ public class PlayerController : MonoBehaviour
             {
                 isAttacking = true;
                 collide.enabled = true;
+                soundMaker.PlayOneShot(swordSound);
             }
 
             if (isAttacking)

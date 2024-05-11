@@ -12,8 +12,6 @@ public class HydraHeadScript : MonoBehaviour
     [SerializeField] float meleeTime;
     [SerializeField] GameObject damageArea;
     float elapsedTime;
-    bool isAttacking = false;
-    public UnityEvent attack;
     int numOfHeads;
     [SerializeField] Animator hydraAnimator;
     public HydraState hydraState { get; private set; }

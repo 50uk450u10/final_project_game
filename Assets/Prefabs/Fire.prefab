@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1804494486413121689}
   - component: {fileID: 1786611693569338137}
   - component: {fileID: 6725590405499443508}
-  - component: {fileID: 4499138595712798772}
   - component: {fileID: 1748079661650902861}
+  - component: {fileID: 8213643418963949643}
   m_Layer: 9
   m_Name: Fire
   m_TagString: Untagged
@@ -150,18 +150,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4499138595712798772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6677004875842783541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2114b41cfad54bd4a8b6daccd5bc3c26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1748079661650902861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,3 +164,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 10
   rb: {fileID: 6725590405499443508}
+--- !u!114 &8213643418963949643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6677004875842783541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a6669c9fd51f3a4c86596facc6bda88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         {
             case "Dragon":
                 type = EnemyType.DRAGON;
-                health = 2;
+                health = 1;
                 break;
             case "Demon":
                 type = EnemyType.DEMON;

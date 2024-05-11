@@ -258,13 +258,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   activeMeleeTime: 1
-  activeRangedTime: 0
+  activeRangedTime: 1
   arrow: {fileID: 7426143519764007251, guid: 8475815edab8bac479ffa2a46b9dfe21, type: 3}
   collide: {fileID: 5347937090273860137}
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4651704932749672935}
         m_TargetAssemblyTypeName: StartEnd, Assembly-CSharp
         m_MethodName: OnLose
         m_Mode: 1

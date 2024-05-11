@@ -164,9 +164,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.04
+  defenseSpeed: 0
   followArea: {fileID: 0}
   player: {fileID: 0}
-  collider: {fileID: 7384856987544766316}
+  collide: {fileID: 7384856987544766316}
   onDeath:
     m_PersistentCalls:
       m_Calls:

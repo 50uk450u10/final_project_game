@@ -5,7 +5,6 @@ using UnityEngine;
 public class HydraDangerClose : MonoBehaviour
 {
     BoxCollider2D dangerClose;
-    bool attacked = false;
     [SerializeField] HydraHeadScript hydraHeadScript;
     // Start is called before the first frame update
     void OnEnable ()
@@ -15,6 +14,9 @@ public class HydraDangerClose : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        hydraHeadScript.attack.Invoke();
+        if (collision.TryGetComponent<PlayerController>(out PlayerController player))
+        {
+            hydraHeadScript.swing.Invoke();
+        }
     }
 }

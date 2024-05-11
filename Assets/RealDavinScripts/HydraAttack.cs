@@ -33,6 +33,7 @@ public class HydraAttack : HydraState
         {
             yield return new WaitForEndOfFrame();
             damageArea.gameObject.transform.localEulerAngles = Vector3.Lerp(damageArea.gameObject.transform.localEulerAngles, new Vector3(0, 0, 90), .01f);
+            Debug.Log("Hello");
         }
         damageArea.transform.rotation = startingPos;
         damageArea.gameObject.SetActive(false);
