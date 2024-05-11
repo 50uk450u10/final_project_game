@@ -257,8 +257,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   activeMeleeTime: 1
+  activeRangedTime: 0
   arrow: {fileID: 7426143519764007251, guid: 8475815edab8bac479ffa2a46b9dfe21, type: 3}
-  collider: {fileID: 5347937090273860137}
+  collide: {fileID: 5347937090273860137}
   onDeath:
     m_PersistentCalls:
       m_Calls:
@@ -274,6 +275,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  ally: {fileID: 0}
 --- !u!114 &5368316557119121414
 MonoBehaviour:
   m_ObjectHideFlags: 0
