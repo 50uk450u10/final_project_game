@@ -14,6 +14,7 @@ public class HydraShoot : HydraState
     {
         hydraAnimator.SetBool("firing", true);
         Pausing = head.StartCoroutine(Pause());
+        head.hydraSounds.PlayOneShot(head.fireBreath);
     }
     public override void Exit()
     {

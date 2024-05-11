@@ -39,6 +39,7 @@ public class HydraAttack : HydraState
     }
     IEnumerator SerpentSLAMAnimation()
     {
+        head.hydraSounds.PlayOneShot(head.Slam);
         yield return new WaitForSeconds(1.2f);
         hydraAnimator.speed = 0;
         damagableArea.gameObject.SetActive(true);

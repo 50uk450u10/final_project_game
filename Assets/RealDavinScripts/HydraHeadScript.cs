@@ -15,9 +15,6 @@ public class HydraHeadScript : MonoBehaviour
     bool isAttacking = false;
     public UnityEvent attack;
     int numOfHeads;
-    //public enum hydraAttackState { attacking, shooting, hurt }//declare states
-    //public hydraAttackState Ghidorah { get { return ghidorah; } }//declare property for enum
-    //hydraAttackState ghidorah = hydraAttackState.shooting;//initialize enum variable to default shooting state
     [SerializeField] Animator hydraAnimator;
     public HydraState hydraState { get; private set; }
     public HydraAttack hydraAttack { get; private set; }
@@ -28,6 +25,9 @@ public class HydraHeadScript : MonoBehaviour
     [SerializeField] BoxCollider2D dangerArea;
     [SerializeField] GameObject damagableArea;
     public UnityEvent swing;
+    public AudioSource hydraSounds;
+    public AudioClip fireBreath;
+    public AudioClip Slam;
     private void Start()
     {
         hydraAnimator.SetFloat("multiplier", (DifficultyManager.difficultyMultiplier/ attackTime) + 1.65f);
@@ -46,39 +46,6 @@ public class HydraHeadScript : MonoBehaviour
         damagableArea.SetActive(false);
         damageArea.SetActive(false);
         hydraStateMachine.Initialize(hydraShoot);
-    }
-
-    private void Update()
-    {
-        {
-            /*switch (Ghidorah)
-            {
-                case hydraAttackState.shooting:
-                    elapsedTime += Time.deltaTime;//timer
-                    if (elapsedTime >= attackTime)
-                    {
-                        hydraAnimator.SetBool("firing", true);
-                        elapsedTime = 0;//reset timer
-                        GameObject p = Instantiate(fire);//create projectile
-                        Vector3 playerDirectionV3 = (player.transform.position - transform.position).normalized;//grab 3D coordinates because Unity
-                        Vector2 playerDirection = new Vector2(playerDirectionV3.x, playerDirectionV3.y);//set target coordinates to 2D
-                        p.GetComponent<Projectile>().spawnProjectileSettings(playerDirection);//force added
-                        p.transform.position = transform.position;//origin point of projectile
-                        hydraAnimator.SetBool("firing", false);
-                    }
-                    break;
-                case hydraAttackState.attacking:
-                    hydraAnimator.SetBool("attacking", true);
-                    elapsedTime += Time.deltaTime;
-                    if (elapsedTime >= meleeTime)
-                    {
-                        elapsedTime = 0;
-                        hydraAnimator.SetBool("attacking", false);
-                        ghidorah = hydraAttackState.shooting;
-                    }
-                    break;
-            }*/
-        }
     }
 
     public void Shoot(int num)

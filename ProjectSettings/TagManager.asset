@@ -11,14 +11,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - player
+  - 
   - Water
   - UI
   - player
   - playerDamage
   - enemy
   - enemyDamage
-  - 
+  - VFX
   - 
   - 
   - 
