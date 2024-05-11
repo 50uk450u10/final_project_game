@@ -7,7 +7,7 @@ public class EnemyAttackState : EnemyState
     bool isGorgon = false;
     GorgonShoot shoot;
     Coroutine Attacking;
-    public EnemyAttackState(Enemy enemy, EnemyStateMachine enemyStateMachine, Rigidbody2D enemyRB, Animator enemyAnimator, PlayerController1 player, float moveSpeed, float attackSpeed, int wave, Enemy.EnemyType type, SpriteRenderer sprite) : base(enemy, enemyStateMachine, enemyRB, enemyAnimator, player, moveSpeed, attackSpeed, wave, type, sprite)
+    public EnemyAttackState(Enemy enemy, EnemyStateMachine enemyStateMachine, Rigidbody2D enemyRB, Animator enemyAnimator, PlayerController player, float moveSpeed, float attackSpeed, int wave, Enemy.EnemyType type, SpriteRenderer sprite) : base(enemy, enemyStateMachine, enemyRB, enemyAnimator, player, moveSpeed, attackSpeed, wave, type, sprite)
     {
         this.moveSpeed = 0;
         enemyAnimator.SetFloat("attackSpeed", DifficultyManager.difficultyMultiplier);

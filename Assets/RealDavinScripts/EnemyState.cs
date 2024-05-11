@@ -8,7 +8,7 @@ public class EnemyState
     protected EnemyStateMachine enemyStateMachine;
     protected Rigidbody2D enemyRB;
     protected Animator enemyAnimator;
-    protected PlayerController1 player;
+    protected PlayerController player;
     protected float moveSpeed;
     protected float attackSpeed;
     protected int wave;
@@ -25,7 +25,7 @@ public class EnemyState
 
     public virtual void GotHit() { enemy.enemyStateMachine.ChangeState(enemy.enemyHurt); }
 
-    public EnemyState(Enemy enemy, EnemyStateMachine enemyStateMachine, Rigidbody2D enemyRB, Animator enemyAnimator, PlayerController1 player, float moveSpeed, float attackSpeed, int wave, Enemy.EnemyType type, SpriteRenderer sprite)
+    public EnemyState(Enemy enemy, EnemyStateMachine enemyStateMachine, Rigidbody2D enemyRB, Animator enemyAnimator, PlayerController player, float moveSpeed, float attackSpeed, int wave, Enemy.EnemyType type, SpriteRenderer sprite)
     {
         this.enemy = enemy;
         this.enemyStateMachine = enemyStateMachine;

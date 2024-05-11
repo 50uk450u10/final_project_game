@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
-    PlayerController1 player;
+    PlayerController player;
     public Rigidbody2D enemyRB { get; protected set; }
     public EnemyStateMachine enemyStateMachine { get; protected set; }
     public EnemyChase enemyChase { get; protected set; }
@@ -27,12 +27,12 @@ public class Enemy : MonoBehaviour
     Coroutine Death;
     protected virtual void OnEnable()
     {
-        player = FindAnyObjectByType<PlayerController1>();
+        player = FindAnyObjectByType<PlayerController>();
         enemyRB = GetComponent<Rigidbody2D>();
         enemyStateMachine = new EnemyStateMachine();
         enemyAnim = GetComponent<Animator>();
         enemy = GetComponent<Enemy>();
-        attackHitbox = GetComponentInChildren<Damager1>().gameObject;
+        attackHitbox = GetComponentInChildren<Damager>().gameObject;
         sprite = GetComponent<SpriteRenderer>();
         attackSpeed += WaveCounter.waveCount / 10;
         switch (gameObject.tag)

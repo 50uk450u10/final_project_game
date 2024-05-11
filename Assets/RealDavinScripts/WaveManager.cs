@@ -12,7 +12,6 @@ public class WaveManager : MonoBehaviour
     {
         spawner = GetComponent<SpawnEnemies>();
         WaveCounter.IncrementWave();
-        DifficultyManager.SetDifficulty(3);
     }
 
     private void OnDisable()
@@ -22,7 +21,6 @@ public class WaveManager : MonoBehaviour
 
     public void CheckEnemies(int numDead1, int numOfEnemies)
     {
-        Debug.Log(numOfEnemies);
         if (numDead1 == numOfEnemies)
         {
             WaveCounter.IncrementWave();
@@ -35,7 +33,6 @@ public class WaveManager : MonoBehaviour
     public void MonsterDead(int numOfEnemies)
     {
         numDead++;
-        Debug.Log(numDead);
         CheckEnemies(numDead, numOfEnemies);
     }
 }
