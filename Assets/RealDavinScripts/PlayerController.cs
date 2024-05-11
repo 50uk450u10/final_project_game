@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] UnityEvent onDeath;
     [SerializeField] AllyScript ally;
     Rigidbody2D rb;
+    Animator animator;
     Vector2 direction;
     const float maxHealth = 5;
     float health;
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
                 rangedElapsedTime += Time.deltaTime;
                 if (rangedElapsedTime >= activeMeleeTime)
                 {
+                    animator.SetTrigger("Shoot");
                     rangedElapsedTime = 0;
                     isShooting = false;
                     Projectile arrow = Instantiate(this.arrow);
@@ -81,6 +84,7 @@ public class PlayerController : MonoBehaviour
                 meleeElapsedTime += Time.deltaTime;
                 if (meleeElapsedTime >= activeMeleeTime)
                 {
+                    animator.SetTrigger("Attack");
                     meleeElapsedTime = 0;
                     isAttacking = false;
                     collide.enabled = false;
