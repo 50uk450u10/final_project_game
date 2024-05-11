@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
     bool isAttacking = false;
     bool isShooting = false;
 
+    public enum animationState { standard, attack, shoot }
+    animationState anim = animationState.standard;
+    public animationState Anim {  get { return anim; } }
+
     private void Start()
     {
         health = maxHealth;
