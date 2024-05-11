@@ -5,7 +5,7 @@ using UnityEngine;
 public class HydraIdle : HydraState
 {
     Coroutine Waiting;
-    public HydraIdle(HydraScript hydra, HydraStateMachine hydraStateMachine, Animator hydraAnimator, PlayerController player, float attackSpeed, HydraHeadScript head, BoxCollider2D dangerArea, GameObject p, int numOfHeads) : base(hydra, hydraStateMachine, hydraAnimator, player, attackSpeed, head, dangerArea, p, numOfHeads)
+    public HydraIdle(HydraScript hydra, HydraStateMachine hydraStateMachine, Animator hydraAnimator, PlayerController player, float attackSpeed, HydraHeadScript head, BoxCollider2D dangerArea, GameObject p, int numOfHeads, GameObject damageArea, GameObject damagableArea) : base(hydra, hydraStateMachine, hydraAnimator, player, attackSpeed, head, dangerArea, p, numOfHeads, damageArea, damagableArea)
     {
 
     }
@@ -17,7 +17,7 @@ public class HydraIdle : HydraState
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(DifficultyManager.difficultyMultiplier * attackSpeed);
+        yield return new WaitForSeconds(1 / (DifficultyManager.difficultyMultiplier * attackSpeed));
         head.hydraStateMachine.ChangeState(head.hydraShoot);
     }
 

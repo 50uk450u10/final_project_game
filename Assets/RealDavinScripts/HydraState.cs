@@ -13,6 +13,8 @@ public class HydraState
     protected BoxCollider2D dangerArea;
     protected GameObject p;
     protected int numOfHeads;
+    protected GameObject damageArea;
+    protected GameObject damagableArea;
 
     public virtual void Enter() { }
 
@@ -22,7 +24,7 @@ public class HydraState
 
     public virtual void Exit() { }
 
-    public HydraState(HydraScript hydra, HydraStateMachine hydraStateMachine, Animator hydraAnimator, PlayerController player, float attackSpeed, HydraHeadScript head, BoxCollider2D dangerArea, GameObject p, int numOfHeads)
+    public HydraState(HydraScript hydra, HydraStateMachine hydraStateMachine, Animator hydraAnimator, PlayerController player, float attackSpeed, HydraHeadScript head, BoxCollider2D dangerArea, GameObject p, int numOfHeads, GameObject damageArea, GameObject damagableArea)
     {
         this.hydra = hydra;
         this.hydraStateMachine = hydraStateMachine;
@@ -33,5 +35,7 @@ public class HydraState
         this.dangerArea = dangerArea;
         this.p = p;
         this.numOfHeads = numOfHeads;
+        this.damageArea = damageArea;
+        this.damagableArea = damagableArea;
     }
 }

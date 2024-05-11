@@ -5,7 +5,7 @@ using UnityEngine;
 public class HydraShoot : HydraState
 {
     Coroutine Pausing;
-    public HydraShoot(HydraScript hydra, HydraStateMachine hydraStateMachine, Animator hydraAnimator, PlayerController player, float attackSpeed, HydraHeadScript head, BoxCollider2D dangerArea, GameObject p, int numOfHeads) : base(hydra, hydraStateMachine, hydraAnimator, player, attackSpeed, head, dangerArea,p, numOfHeads)
+    public HydraShoot(HydraScript hydra, HydraStateMachine hydraStateMachine, Animator hydraAnimator, PlayerController player, float attackSpeed, HydraHeadScript head, BoxCollider2D dangerArea, GameObject p, int numOfHeads, GameObject damageArea, GameObject damagableArea) : base(hydra, hydraStateMachine, hydraAnimator, player, attackSpeed, head, dangerArea,p, numOfHeads, damageArea, damagableArea)
     {
 
     }
@@ -22,9 +22,9 @@ public class HydraShoot : HydraState
     }
     IEnumerator Pause()
     {
-        yield return new WaitForSeconds(0.5f);
-        head.Shoot();
-        yield return new WaitForSeconds(1.1f);
+        yield return new WaitForSeconds(0.2f);
+        head.Shoot(head.HeadCount());
+        yield return new WaitForSeconds((1 / (DifficultyManager.difficultyMultiplier * attackSpeed)));
         head.hydraStateMachine.ChangeState(head.hydraIdle);
     }
 }

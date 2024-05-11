@@ -8,16 +8,11 @@ public class VideoSettingsManager : MonoBehaviour
 {
     //[SerializeField] TMP_Dropdown resolutionChoice;
     [SerializeField] Toggle fullscreenToggle;
-    [SerializeField] Toggle vSyncToggle;
     bool fullscreen;
-    bool vSync;
     public void ConfirmChanges()
     {
         fullscreen = fullscreenToggle.enabled;
         Screen.fullScreen = fullscreen;
-        vSync = vSyncToggle.enabled;
-        //ChangeResolution(resolutionChoice.value, fullscreen);
-        ChangeVScync(vSync);
     }
 
     // Code for resolution if we ever do it 
@@ -37,7 +32,7 @@ public class VideoSettingsManager : MonoBehaviour
     //    }
     //}
 
-    void ChangeVScync(bool vsync)
+    /*void ChangeVScync(bool vsync)
     {
         if (vsync)
         {
@@ -47,5 +42,5 @@ public class VideoSettingsManager : MonoBehaviour
         {
             QualitySettings.vSyncCount = 0;
         }
-    }
+    }*/
 }
